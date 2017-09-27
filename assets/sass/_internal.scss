@@ -1,0 +1,507 @@
+// INTERNAL PAGES
+
+p,
+li{
+  color: $tundora;
+  font-family: $open;
+  font-size: 14px;
+  line-height: 1.6;
+
+  @include MQ(M){
+    font-size: 16px;
+  }
+
+  @include MQ(L){
+    font-size: 18px;
+  }
+}
+
+.Title{
+  margin: 45px 0 30px;
+
+  h1{
+    font-size: 28px;
+    margin: 0 0 10px;
+  }
+
+  small{
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  h1,
+  small{
+    color: $azure;
+  }
+
+  &__date{
+    border: 3px solid white;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 10px;
+    float: right;
+    margin-top: 160px;
+
+    small,
+    span{
+      display: block;
+      color: white;
+    }
+
+    small{
+      text-transform: uppercase;
+    }
+  }
+
+  &__subtitle{
+    bottom: 15px;
+    left: 15px;
+    position: absolute;
+  }
+
+  &__category{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;    
+    margin-bottom: 1em;
+    
+  }
+
+  @include MQ(M){
+    h1{
+      font-size: 54px;
+    }
+
+    small{
+      font-size: 20px;
+    }
+  }
+
+  &--background,
+  &--internal,
+  &--without{
+    @extend .Title;
+  }
+
+  &--background{
+    background-position: center center;
+    background-size: cover;
+    height: 280px;
+    margin: 0 0 30px;    
+
+    @include MQ(M){
+      height: 292px;
+    }
+    
+    .container{
+      height: 100%;
+      position: relative;
+    }
+
+    h1{
+      bottom: 35px;
+      color: white;
+      left: 15px;
+      position: absolute;
+      text-transform: uppercase;   
+    }
+
+    small {
+      color: white;
+    }
+  }
+
+  &--internal{
+    background-color: #f7f7f7;
+    position: relative;
+    padding: 40px 0 50px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $gallery;
+
+    h1{
+      font-family: $gotham-book;
+      font-size: 28px;
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      text-align: center;
+
+    
+      @include MQ(M){
+        font-size: 40px;
+        letter-spacing: -0.4px;
+      }
+    }
+
+    .Social{
+      @include center(x);
+      bottom: -15px;
+      position: absolute;
+
+      li{
+        margin: 0 4px;
+      }
+    }
+  }
+}
+
+.SideBanner{
+  margin-bottom: 55px;
+  
+  @include MQ(M){
+    display: flex;
+  }
+
+  &__img{
+    background: url(../img/quem-somos.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+
+    @include MQ(M){
+      background-position: left center;
+      height: auto;
+      width: 52%;
+    }
+  }
+
+  &__content{
+    padding: 0 20px;
+
+    @include MQ(M){
+      flex: 1;
+      max-width: 470px;
+    }
+
+    p{
+      color: $evening-sea;
+      font-family: $gotham-book;
+    }
+  }
+
+  &__title{
+    color: $azure;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin: 20px 0 35px;
+    position: relative;
+    text-transform: uppercase;    
+
+    @include MQ(M){
+      left: -170px;
+      font-size: 26px;
+      width: 620px;
+    }
+  }
+}
+
+.Post{
+  padding-bottom: 30px;
+
+  p{
+    letter-spacing: -0.2px;
+    
+    @include MQ(M){
+      text-align: justify;
+    }
+  }
+
+  h2{
+    color: $curious-blue;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 3px;
+    margin-top: 30px;
+
+    ~ p{
+      margin: 0 0 20px;
+    }
+  }
+
+  &__title{
+    background-color: $alabaster;
+    border-bottom: 1px solid $gallery;
+    padding: 35px 0 45px;
+    margin-bottom: 40px;
+    position: relative;
+
+    h1{
+      color: $lochmara;
+      font-family: $gotham-book;
+      font-size: 26px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.4px;
+      margin: 0;
+      text-align: center;
+
+      @include MQ(M){
+        font-size: 40px;
+      }
+    }
+
+    .Social{
+      bottom: -15px;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+
+    }
+  }
+
+  // Evento campanha
+  &--ec{
+    @extend .Post;
+
+    h1{
+      text-transform: none;
+    }
+    
+    div[class^="col-"]{
+      height: 100%;
+    }
+
+    .Title--without {
+      div[class^="col-"]{
+        height: auto;
+        padding-bottom: 25px;
+      }
+
+    }
+  }
+}
+
+.Featured{
+  background: rgba(0,157,242,1);
+  background: -moz-linear-gradient(left, rgba(0,157,242,1) 0%, rgba(0,172,247,1) 29%, rgba(0,200,255,1) 83%, rgba(0,200,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,157,242,1)), color-stop(29%, rgba(0,172,247,1)), color-stop(83%, rgba(0,200,255,1)), color-stop(100%, rgba(0,200,255,1)));
+  background: -webkit-linear-gradient(left, rgba(0,157,242,1) 0%, rgba(0,172,247,1) 29%, rgba(0,200,255,1) 83%, rgba(0,200,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(0,157,242,1) 0%, rgba(0,172,247,1) 29%, rgba(0,200,255,1) 83%, rgba(0,200,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(0,157,242,1) 0%, rgba(0,172,247,1) 29%, rgba(0,200,255,1) 83%, rgba(0,200,255,1) 100%);
+  background: linear-gradient(to right, rgba(0,157,242,1) 0%, rgba(0,172,247,1) 29%, rgba(0,200,255,1) 83%, rgba(0,200,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009df2', endColorstr='#00c8ff', GradientType=1 );
+  padding: 35px 0 0;
+
+  span,
+  p,
+  small{
+    color: white;
+  }
+
+  @include MQ(M){
+    > .container{
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+
+
+  &__category{
+    border-bottom: 1px solid white;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+  }
+
+  &__title{
+    font-size: 26px;
+    font-family: $gotham-book;
+    line-height: 1;
+    margin: 0;
+    text-align: left;
+  }
+
+  &__date{
+    border-radius: 20px;
+    border: 3px solid white;
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 30px 0 0;
+
+    @include MQ(M){
+      float: right;
+      margin: 0;
+    }
+    
+    p,
+    small{
+      line-height: 1;
+      text-align: center;
+    }
+
+    p{
+      font-family: $gotham;
+      font-size: 37px;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    small{
+      display: block;
+      font-family: $gotham-book;
+    }
+  }
+
+  footer{
+    @include clearfix;
+
+    border-top: 1px solid #00a4f4;
+    font-family: $gotham-book;
+    font-size: 13px;
+    font-weight: 300;
+    margin-top: 20px;
+    text-transform: uppercase;
+
+    a{
+      text-decoration: none;
+      color: currentColor;
+    }
+
+    span{
+      display: inline-block;
+      float: left;
+      position: relative;
+      letter-spacing: -0.2px;
+      padding-right: 6px;
+      padding-left: 4px;
+
+      @include MQ(M){
+        &:last-child{
+          padding-right: 0;
+
+          &::after{
+            display: none;
+          }
+        }
+
+        &::after{
+          background: white;
+          content: "";
+          display: block;
+          height: 12px;
+          position: absolute;
+          right: 0;
+          top: 10px;
+          width: 1px;
+        }
+      }
+    }
+  }
+
+  @include MQ(M){
+    &__column{
+      flex: 1;
+    }
+  }
+}
+
+.Letter{
+  @include clearfix;
+
+  border: 3px solid $curious-blue;
+  border-radius: 20px;
+  margin-bottom: 75px;
+
+  @include MQ(M){
+    padding: 65px;
+  }
+
+  h2{
+    color: $evening-sea;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+
+    @include MQ(M){
+      font-size: 24px;
+    }
+  }
+
+  p{
+    color: $evening-sea;
+  }
+
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__title{
+    border-radius: 20px;
+    border: 3px solid $curious-blue;
+    color: $curious-blue;
+    font-family: $brandon;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 20px;
+    line-height: 1.4;
+    margin: 15px 15px 55px;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include MQ(M){
+      font-size: 30px;
+      padding: 30px 45px;
+      margin: 0 15px 55px;
+
+      &::after,
+      &::before{
+        content: "•";
+        display: inline-block;
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  &__content{
+    padding: 0 15px;
+    
+    p{
+      text-align: justify;
+
+      @include MQ(M){
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+.Presidente{
+  position: relative;
+
+  &__foto{
+    display: inline-block !important;
+    float: left;
+
+  }
+
+  &__foto{
+    margin-right: 35px !important;
+  }
+
+  &__texto{
+    color: $evening-sea;
+    font-family: $gotham;
+    font-weight: bold;
+  }
+
+  &__assinatura{
+    position: absolute;
+    right: 0;
+  }
+
+  &__tchau{
+    span{
+      color: #2f98c5;
+      font-weight: bold;
+    }
+  }
+}
